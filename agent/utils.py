@@ -81,7 +81,10 @@ def get_embed_model(api_key: str):
 def get_llm_model(api_key: str):
     return GoogleGenAI(
     model="gemini-2.5-flash",
-    api_key=api_key
+    api_key=api_key,
+    temperature=0.7,
+    max_tokens=65535,
+    context_window=1048576
 )
 
 def get_or_create_vector_index(docs_dir: str, index_dir: str) -> VectorStoreIndex:

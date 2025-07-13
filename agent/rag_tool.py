@@ -7,7 +7,7 @@ from config import VECTOR_INDEX_DIR
 class RAGTool:
     def __init__(self, docs_dir: str):
         self._index = get_or_create_vector_index(docs_dir, VECTOR_INDEX_DIR)
-        self._query_engine = self._index.as_query_engine(vector_store_query_mode=VectorStoreQueryMode.DEFAULT, similarity_top_k=6, response_mode="compact_accumulate")
+        self._query_engine = self._index.as_query_engine(vector_store_query_mode=VectorStoreQueryMode.DEFAULT, similarity_top_k=8, response_mode="compact_accumulate")
 
     def as_query_engine_tool(self) -> QueryEngineTool:
         # Return a QueryEngineTool for direct agent use

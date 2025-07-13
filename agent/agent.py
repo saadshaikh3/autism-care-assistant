@@ -27,5 +27,7 @@ def build_agent(
         llm=Settings.llm,
         system_prompt=_system_prompt,
         verbose=True,
-    )
+        timeout=300,
+        streaming=True
+        )
     return agent

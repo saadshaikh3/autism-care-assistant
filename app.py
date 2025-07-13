@@ -242,18 +242,24 @@ with st.sidebar:
     
     st.divider()
     
-    # Chat controls using native buttons
-    st.subheader("💬 Chat Controls")
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("🗑️Clear", use_container_width=True, help="Clear chat history"):
-            st.session_state.messages = []
-            st.rerun()
-    
-    with col2:
-        if st.button("🔄Refresh", use_container_width=True, help="Refresh the page"):
-            st.rerun()
+    # Clear chat button
+    if st.button("🗑️ Clear Chat", use_container_width=True, help="Clear chat history"):
+        # Clear messages
+        st.session_state.messages = []
+        
+        # Clear all citation-related session state keys
+        keys_to_remove = []
+        for key in st.session_state.keys():
+            if any(key.startswith(prefix) for prefix in [
+                'show_citation_', 'text_content_', 'close_citation_', 
+                'citation_badge_', 'sources_', '_temp_sources'
+            ]):
+                keys_to_remove.append(key)
+        
+        for key in keys_to_remove:
+            del st.session_state[key]
+        
+        st.rerun()
     
     # Session statistics
     with st.expander("📊 Session Stats"):
