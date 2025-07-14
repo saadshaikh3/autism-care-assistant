@@ -177,8 +177,9 @@ async def get_agent_response(user_input: str, assistant: str, use_rag: bool, use
                     if event.delta:  # Only yield non-empty deltas
                         yield event.delta
                 elif isinstance(event, ToolCallResult):
-                    tool_name = getattr(event, 'tool_name', 'unknown')
-                    logger.debug(f"Tool executed: {tool_name}")
+                    tool_name = event.tool_name
+                    tool_input = event.tool_kwargs
+                    logger.info(f"Tool executed: {tool_name} with input args: {tool_input}")
                     
                     # Extract source nodes from tool output and store directly in session state
                     if hasattr(event, 'tool_output') and hasattr(event.tool_output, 'raw_output'):

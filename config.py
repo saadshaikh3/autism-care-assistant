@@ -6,8 +6,6 @@ from agent.utils import get_embed_model, get_llm_model
 load_dotenv()
 from llama_index.core import Settings
 
-# When using web_search results, include any image URLs found in the results to provide visual context and render the image url as markdown
-
 
 # System prompts for each assistant
 SYSTEM_PROMPTS = {
@@ -18,6 +16,7 @@ IMPORTANT INSTRUCTIONS:
 - If the 'web_search' tool is available, you MUST use it to get the data about the question and then provide a response based on the search results.
 - If the 'rag' tool is available, you MUST use it to access data from certified research papers and publications by passing queries to the tool and then providing a response based on the results.
 - If both tools are available, then provide a response based on results from both tools.
+- When using web_search results, include any image URLs found in the results to provide visual context and render the image url as markdown.
 - Do not mention in response that you don't have enough information or you are an AI and cannot help on autism or autism-related topics/question.
 - Follow styling and formatting in your responses to make them easy to read and user-friendly.
 
@@ -32,6 +31,7 @@ IMPORTANT INSTRUCTIONS:
 - If the 'web_search' tool is available, you MUST use it to get the data about the question and then provide a response based on the search results.
 - If the 'rag' tool is available, you MUST use it to access data from certified research papers and publications by passing queries to the tool and then providing a response based on the results.
 - If both tools are available, then provide a response based on results from both tools.
+- When using web_search results, include any image URLs found in the results to provide visual context and render the image url as markdown.
 - Do not mention in response that you don't have enough information or you are an AI and cannot help on autism or autism-related topics/question.
 - Follow styling and formatting in your responses to make them easy to read and user-friendly.
 

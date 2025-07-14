@@ -53,11 +53,11 @@ class WebSearchTool:
                 for i, result in enumerate(self.results[:5]):  # Show top 5 results
                     summary += f"{i+1}. {result.get('title', 'No Title')}\n"
                     summary += f"   URL: {result.get('url', '')}\n"
-                    summary += f"   Content: {result.get('content', '')[:200]}...\n\n"
+                    summary += f"   Content: {result.get('content', '')}\n\n"
                 
                 if self.images:
                     summary += f"\nFound {len(self.images)} related images from NHS sources:\n"
-                    for i, img_data in enumerate(self.images[:3]):  # Show top 3 images
+                    for i, img_data in enumerate(self.images[:5]):  # Show top 5 images
                         if isinstance(img_data, dict):
                             # Image data is an object with url and description
                             img_url = img_data.get('url', '')
@@ -68,8 +68,6 @@ class WebSearchTool:
                         else:
                             # Fallback for string URLs (backward compatibility)
                             summary += f"- Image {i+1}: {img_data}\n"
-                    if len(self.images) > 3:
-                        summary += f"- ... and {len(self.images) - 3} more images\n"
                     summary += "\n"
                 
                 summary += f"Total results: {len(self.results)} web pages, {len(self.images)} images"
