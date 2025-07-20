@@ -23,8 +23,8 @@ except RuntimeError:
 
 # Streamlit page configuration
 st.set_page_config(
-    page_title="Autism Parent Assistant",
-    page_icon="👪",
+    page_title="Autism Care Assistant",
+    page_icon="🤝",
     layout="centered",
     initial_sidebar_state="expanded"
 )
@@ -205,8 +205,8 @@ async def get_agent_response(user_input: str, assistant: str, use_rag: bool, use
         yield "I apologize, but I encountered an error while processing your request. Please try again."
 
 # Page title and description
-st.title("👪 Autism Parent Assistant")
-st.markdown("*Chat with an AI assistant trained to help parents of autistic children.*")
+st.title("🤝 Autism Care Assistant")
+st.markdown("*Supporting parents, teachers, carers, therapists, and professionals caring for autistic children.*")
 
 # Sidebar with native Streamlit components
 with st.sidebar:
@@ -353,7 +353,7 @@ if user_input := st.chat_input("Ask me anything about autism support..."):
 st.markdown("---")
 st.markdown(
     "<div style='text-align: center; color: #888; font-size: 0.9em;'>"
-    "🤝 Autism Parent Assistant - De Montfort University | Saad Shaikh | "
+    "Autism Care Assistant - De Montfort University | Saad Shaikh | "
     f"Session: {len(st.session_state.messages)} messages"
     "</div>",
     unsafe_allow_html=True

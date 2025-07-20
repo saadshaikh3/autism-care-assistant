@@ -1,7 +1,7 @@
-# autism-parent-assistant
+# autism-care-assistant
 
-**App Name:** Autism Parent Assistant  
-A compassionate and informative chat assistant to support parents of autistic children, regionally tuned for the UK and India, with optional web search and document-based (RAG) help.
+**App Name:** Autism Care Assistant  
+A compassionate and informative chat assistant to support caregivers of autistic children, including parents, teachers, carers, therapists, and professionals. Regionally tuned for the UK and India, with optional web search and document-based (RAG) help.
 
 ---
 
@@ -19,8 +19,8 @@ A compassionate and informative chat assistant to support parents of autistic ch
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/autism-parent-assistant.git
-cd autism-parent-assistant
+git clone https://github.com/yourusername/autism-care-assistant.git
+cd autism-care-assistant
 ```
 
 ### 2. Create a venv and activate it. Then install dependencies using
