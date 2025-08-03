@@ -236,9 +236,9 @@ with st.sidebar:
     )
     
     st.session_state.use_rag = st.toggle(
-        "📚 Medical Publications Based Answers", 
+        "📚 Research Based Answers", 
         value=st.session_state.use_rag,
-        help="Get answers from certified research papers and publications"
+        help="Get answers from research papers and academic publications"
     )
     
     st.divider()
@@ -261,13 +261,6 @@ with st.sidebar:
             del st.session_state[key]
         
         st.rerun()
-    
-    # Session statistics
-    with st.expander("📊 Session Stats"):
-        st.metric("Messages", len(st.session_state.messages))
-        st.metric("Assistant", st.session_state.assistant.upper())
-        tools_count = sum([st.session_state.use_web_search, st.session_state.use_rag])
-        st.metric("Active Tools", f"{tools_count}/2")
 
 # Display chat messages using native chat components
 for i, message in enumerate(st.session_state.messages):
@@ -351,10 +344,17 @@ if user_input := st.chat_input("Ask me anything about autism support..."):
 
 # Footer
 st.markdown("---")
+# AI Disclaimer
 st.markdown(
-    "<div style='text-align: center; color: #888; font-size: 0.9em;'>"
-    "Autism Care Assistant - De Montfort University | Saad Shaikh | "
-    f"Session: {len(st.session_state.messages)} messages"
+    "<div style='background-color: #fffbf0; border: 0px solid #ffeaa7; border-radius: 0.25rem; padding: 0.3rem; font-size: 0.7em; color: #856404; opacity: 0.7; margin-bottom: 1rem;'>"
+    "⚠️ <strong>Disclaimer:</strong> This assistant is powered by AI and provides general information only. "
+    "Always consult with qualified healthcare professionals or doctors for specific medical concerns about the child's care."
+    "</div>",
+    unsafe_allow_html=True
+)
+st.markdown(
+    "<div style='text-align: center; color: #888; font-size: 0.7em;'>"
+    "© De Montfort University, Leicester, UK | Saad Shaikh | Professor Daniela Romano | Dr. Shobha Sivaramakrishnan  - 2025"
     "</div>",
     unsafe_allow_html=True
 )

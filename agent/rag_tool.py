@@ -14,6 +14,6 @@ class RAGTool:
         return QueryEngineTool.from_defaults(
             query_engine=self._query_engine,
             name="rag",
-            description="Useful for answering questions from the certified indexed documents and publications. Use a detailed plain text question as input to the tool with the word 'summarize' in it. ",
+            description="Useful for answering questions from the indexed research documents and publications. Use a detailed plain text question as input to the tool with the word 'summarize' in it. ",
         )
 
