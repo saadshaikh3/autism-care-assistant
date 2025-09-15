@@ -23,7 +23,7 @@ except RuntimeError:
 
 # Streamlit page configuration
 st.set_page_config(
-    page_title="Autism Care Assistant 1",
+    page_title="Autism Care Assistant",
     page_icon="🤝",
     layout="centered",
     initial_sidebar_state="expanded"
